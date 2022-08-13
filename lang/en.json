@@ -10,6 +10,7 @@
         "info": "Info",
         "categories": "Categories",
         "call_us": "Call us at {phone_number}",
+        "tel": "tel. {phone_number}",
         "powered_by": "Powered by"
     },
     "home": {
