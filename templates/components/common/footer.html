@@ -28,7 +28,9 @@
         data-section-type="footer-webPages"
       >
         <h3 class="footer-info-heading">
-          <!--{{lang 'footer.navigate'}}-->{{settings.store_name}}
+          <span class="footer-heading-large"><!--{{lang 'footer.navigate'}}-->{{settings.store_name}}</span>
+          <span class="footer-heading-small">{{settings.store_name}}
+            <span class="footer-collapse" onClick="footerDropdown(this)" >+</span></span>
         </h3>
         <ul class="footer-info-list">
           {{#each pages}}
@@ -45,7 +47,11 @@
         class="footer-info-col footer-info-col--small"
         data-section-type="footer-categories"
       >
-        <h3 class="footer-info-heading">{{lang 'footer.categories'}}</h3>
+        <h3 class="footer-info-heading">
+          <span class="footer-heading-large">{{lang 'footer.categories'}}</span>
+          <span class="footer-heading-small">{{lang 'footer.categories'}}
+            <span class="footer-collapse" onClick="footerDropdown(this)">+</span></span>
+        </h3>
         <ul class="footer-info-list">
           {{#each categories}}
           <li>
@@ -59,9 +65,23 @@
         class="footer-info-col footer-info-col--small"
         data-section-type="footer-brands"
       >
-        <h3 class="footer-info-heading">
-          Informazioni legali<!--{{lang 'footer.brands'}}-->
+
+        <!--<h3 class="footer-info-heading ">
+          Informazioni legali
         </h3>
+        <h3 class="footer-info-heading footer-heading-small footer-info-heading-3">
+          Informazioni legali
+          <span class="collapse-button-3" onclick="showThree()">+</span>
+        </h3>-->
+
+        <h3 class="footer-info-heading">
+          <span class="footer-heading-large"> Informazioni legali<!--{{lang 'footer.brands'}}--></span>
+          <span class="footer-heading-small">Informazioni legali<!--{{lang 'footer.brands'}}-->
+            <span class="footer-collapse" onClick="footerDropdown(this)">+</span></span>
+         </h3>
+
+
+
         <ul class="footer-info-list">
           {{#each shop_by_brand}}
           <li>
@@ -77,21 +97,25 @@
         class="footer-info-col footer-info-col--small footer-info-col--end"
         data-section-type="storeInfo"
       >
-    
         {{#if settings.address}}
-        <h3 class="footer-info-heading">{{lang 'footer.info'}} <span>+</span></h3>
-        <span class="footer-collapse">
-        <address  class="footer-large">{{nl2br settings.address}}</address>
-        {{#if settings.phone_number}}
-        <address class="footer-large">
-          {{lang 'footer.tel' phone_number=settings.phone_number}}
-        </address>
+        <h3 class="footer-info-heading">
+         <span class="footer-heading-large"> {{lang 'footer.info'}}</span>
+         <span class="footer-heading-small">{{lang 'footer.info'}} 
+         <span class="footer-collapse" onClick="footerDropdown(this)">+</span></span>
+        </h3>
+       
+        <div class="footer-info-list">
+          <address>{{nl2br settings.address}}</address>
+          {{#if settings.phone_number}}
+          <address>
+            {{lang 'footer.tel' phone_number=settings.phone_number}}
+          </address>
+          {{/if}}
+          <address>Fax goes here</address>
+          <strong><address>Email goes here</address></strong
+          >
+        </div>
         {{/if}}
-        <address class="footer-large">Fax goes here</address>
-        <strong class="footer-large"><address>Email goes here</address></strong>
-    </span>
-        {{/if}}
-
 
         <div>{{> components/common/payment-icons}}</div>
       </article>
@@ -104,7 +128,6 @@
         {{> components/common/subscription-form}}
       </article>
       {{/if}}
-
     </section>
 
     {{#if settings.paypal_commerce_credit_message}}
@@ -113,7 +136,6 @@
         {{nl2br settings.paypal_commerce_credit_message}}
       </p>
     </div>
-    
 
     {{/if}} {{#if theme_settings.show_powered_by}}
     <div class="footer-copyright">
@@ -136,7 +158,7 @@
   <hr />
   <div class="footer-container">
     <div class="footer-lower">
-      {{#if theme_settings.social_icon_placement_bottom '===' 'bottom_none'}}
+      {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
       <article
         class="footer-info-col--social
                   footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
@@ -147,8 +169,9 @@
       </article>
       {{/if}} {{#if theme_settings.show_copyright_footer}}
       <p class="footer-copyright">
-        &copy; 2011-{{moment format="YYYY"}} {{settings.store_name}} - All Right Reserved - P.IVA 01317910121 - Codice
-        REA VA172423 - Capitale Sociale I.V. 4.500.000€
+        &copy; 2011-{{moment format="YYYY"}} {{settings.store_name}} - All Right
+        Reserved - P.IVA 01317910121 - Codice REA VA172423 - Capitale Sociale
+        I.V. 4.500.000€
       </p>
       {{/if}}
     </div>
@@ -156,3 +179,74 @@
 
   {{{region name="ssl_site_seal--global"}}}
 </footer>
+
+<script>
+
+var footerCollapse = document.getElementsByClassName('footer-collapse');
+
+/*
+for (var i = 0; i < footerCollapse.length; i++) {
+  footerCollapse[i].onclick = showThree;
+}
+*/
+
+function footerDropdown(a) {
+ 
+ console.log( a )
+
+a.classList.toggle("red");
+//a.parentNode.classList.toggle("underline-red");
+
+ if (a.innerHTML === "+") {
+  a.innerHTML = "-";
+} else {
+  a.innerHTML = "+";
+}
+
+  //a.parentNode.getElementsByClassName('footer-info-list')[0].classList.toggle("footer-show");
+
+/* const footerCol = document.getElementsByClassName("footer-collapse-3");
+const footerButtonThree =
+  document.getElementsByClassName("collapse-button-3");
+const headingThree = document.getElementsByClassName(
+  "footer-info-heading-3"
+);
+
+footerCol[0].classList.toggle("footer-show");
+footerButtonThree[0].classList.toggle("red");
+headingThree[0].classList.toggle("red");
+headingThree[0].classList.toggle("underline-red");
+
+
+if (footerButtonThree[0].innerHTML === "+") {
+  footerButtonThree[0].innerHTML = "-";
+} else {
+  footerButtonThree[0].innerHTML = "+";
+}
+*/
+}
+
+/*
+  function showThree() {
+  
+    const footerThree = document.getElementsByClassName("footer-collapse-3");
+    const footerButtonThree =
+      document.getElementsByClassName("collapse-button-3");
+    const headingThree = document.getElementsByClassName(
+      "footer-info-heading-3"
+    );
+
+    footerThree[0].classList.toggle("footer-show");
+    footerButtonThree[0].classList.toggle("red");
+    headingThree[0].classList.toggle("red");
+    headingThree[0].classList.toggle("underline-red");
+   
+
+    if (footerButtonThree[0].innerHTML === "+") {
+      footerButtonThree[0].innerHTML = "-";
+    } else {
+      footerButtonThree[0].innerHTML = "+";
+    }
+  }
+  */
+</script>
