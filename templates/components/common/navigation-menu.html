@@ -26,7 +26,7 @@
              {{/each}}
         {{/unless}}
     </ul>
-    <ul class="navPages-list navPages-list--user">
+   <!-- <ul class="navPages-list navPages-list--user">
         {{#if currency_selector.currencies.length '>' 1}}
             <li class="navPages-item">
                 <a class="navPages-action has-subMenu"
@@ -97,7 +97,7 @@
                 </a>
             </li>
         {{/if}}
-        {{#if customer}}
+          {{#if customer}}
             <li class="navPages-item">
                 <a class="navPages-action has-subMenu"
                    href="{{urls.account.index}}"
@@ -190,7 +190,7 @@
                     {{lang 'common.logout'}}
                 </a>
             </li>
-        {{else}}
+      {{else}}
             <li class="navPages-item">
                 <a class="navPages-action"
                    href="{{urls.auth.login}}"
@@ -208,11 +208,11 @@
                     </a>
                 {{/if}}
             </li>
-        {{/if}}
+        {{/if}} 
         {{#if theme_settings.social_icon_placement_top}}
             <li class="navPages-item">
                 {{> components/common/social-links}}
             </li>
         {{/if}}
-    </ul>
+    </ul> -->
 </nav>
