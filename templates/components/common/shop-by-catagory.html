@@ -1,33 +1,18 @@
-<div class="shop-by-catagory" >
-    <h2>Shop by category</h2>
-    <div class="catagory-container">
-
-
-        <!--<ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}"> -->
-            {{#each categories}}
-            <div class="catagory">
-                <img class="catagory-image" src="{{image.data}}" alt="{{image.alt}}">
-                <h4><a href="{{url}}">{{name}} 
-              <!--  {{#if ../theme_settings.navigation_design '===' 'simple'}}
-                    {{> components/common/navigation-list}}
-                {{/if}} -->
-                {{log image}}
-            </a></h4></div>
-               
-            {{/each}}
-           
-      <!--  </ul> -->
-
-       <!-- <div class="catagory"><h4><a href="">ONE</a></h4></div>
-        <div class="catagory"><h4>ONE</h4></div>
-        <div class="catagory"><h4>ONE</h4></div>
-        <div class="catagory"><h4>ONE</h4></div>
-        <div class="catagory"><h4>ONE</h4></div>
-        <div class="catagory"><h4>ONE</h4></div>
-        <div class="catagory"><h4>ONE</h4></div>
-        <div class="catagory"><h4>ONE</h4></div>
-       -->
+<div class="shop-by-catagory">
+  <h2>Shop by category</h2>
+  <div class="catagory-container">
+    {{#each categories}}
+    <div class="catagory">
+        <a href="{{url}}">
+            <img
+        class="catagory-image"
+        src="{{getImageSrcset image 1x=(default fallback_size '160w')}}"
+        alt="{{image.alt}}"
+        title="{{image.alt}}"
+      />
+    </a>
+      <h4><a href="{{url}}">{{name}}</a></h4>
     </div>
-
-
+    {{/each}}
+  </div>
 </div>

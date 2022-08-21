@@ -1,5 +1,5 @@
 {
-  "name": "Fogliani-mk-2 20/08/22",
+  "name": "Fogliani-mk-2 21/08/22",
   "version": "6.5.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -398,9 +398,9 @@
         "hide_category_page_heading": false,
         "hide_blog_page_heading": false,
         "hide_contact_us_page_heading": false,
-        "homepage_new_products_count": 4,
+        "homepage_new_products_count": 0,
         "homepage_featured_products_count": 4,
-        "homepage_top_products_count": 4,
+        "homepage_top_products_count": 0,
         "homepage_show_carousel": true,
         "homepage_show_carousel_arrows": true,
         "homepage_show_carousel_play_pause_button": true,
