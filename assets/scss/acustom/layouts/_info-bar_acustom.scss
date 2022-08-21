@@ -1,10 +1,37 @@
-.info-bar{
-  background-color: #333333;
-  height: 44px;
+.info-bar {
+  //border: 1px solid red;
+  background-color: $TECH-40;
+  height: 60px;
   margin: 0;
-  padding: 0;
-  display: none;
-  
+  //padding: 20px 0;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  //position: relative;
+  //position: absolute;
+  color: black;
+  width: 100%;
+  // width:100vw;
+  /* Column | row */
+  a {
+   // border: 1px solid red;
+    position:relative;
+    width: fit-content;
+    z-index:10;
+    margin: auto;
+    &:hover {
+      //color: red;
+    }
+    &:focus {
+      outline: 0 !important;
+    }
+  }
+}
+
+/*
 ul{
  // border: 1px solid yellow;
   width: 96%;
@@ -30,7 +57,7 @@ ul{
 
 
 
-}
+
 
 @media (min-width: 992px) {
   .info-bar{
@@ -38,7 +65,7 @@ ul{
   }
 }
 
-/*.info-bar{
+.info-bar{
    // background-color: $SECONDARY;
     margin-top:  9px;
     @include breakpoint("medium") {

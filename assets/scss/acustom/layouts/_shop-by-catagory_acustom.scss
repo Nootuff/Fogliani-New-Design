@@ -1,9 +1,7 @@
 .shop-by-catagory {
   // border: 1px solid blue;
-  margin: -70px auto 0;
-  h2 {
-    text-align: center;
-  }
+  //margin: -70px auto 0;
+  margin: 50px auto 0;
 }
 
 .catagory-container {
@@ -41,7 +39,6 @@
     @include breakpoint("large") {
       width: 308px;
       height: 308px;
-      // padding: 1rem;
       border-radius: 16px;
     }
   }
