@@ -718,6 +718,7 @@
         "category": "Shop by category",
         "all_products": "All the products",
         "all_categories": "All the categories",
+        "our_suppliers": "Our Suppliers",
         "file_option_set": "Currently: <a href=\"{url}\" target=\"_blank\">{name}</a>",
         "new": "New Products",
         "warranty": "Warranty Information",

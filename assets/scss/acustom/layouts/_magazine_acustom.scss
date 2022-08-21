@@ -1,0 +1,42 @@
+.magazine-container {
+ // border: 1px solid blue;
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(1, 1fr);
+  width: 92%;
+  margin: auto;
+
+  .magazine-img {
+   // border: 1px solid red;
+    height: 400px;
+    max-width: 632px;
+    max-height: 400px;
+    overflow: hidden;
+  }
+
+  .magazine-info {
+    //border: 1px solid green;
+    text-align: center;
+    background-color: $Primary-Light;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    button{
+      background-color: $TECH-100;
+      width: fit-content;
+      color: white;
+      margin: 0 auto;
+      padding: 12px 16px;
+      border-radius: 6px;
+    }
+  }
+
+  @include breakpoint("large") {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    width: 100%;
+  }
+}
