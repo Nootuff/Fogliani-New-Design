@@ -1,0 +1,17 @@
+.breadcrumbs{
+    background-color: $TECH-40;
+    padding:  8px 0;
+}
+
+.breadcrumb {
+    &:not(:first-child)::before {
+        border-right: none;
+        content: ">";
+        display: inline-block;
+        height: 0.8em;
+        margin: 0 ;
+        transform: rotate(0deg);
+        font-weight: bold;
+    }
+}
+
