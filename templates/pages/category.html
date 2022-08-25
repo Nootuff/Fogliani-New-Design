@@ -28,19 +28,22 @@ category:
     {{/unless}}
 {{/if}}
 {{#unless theme_settings.hide_category_page_heading }}
-    <h1 class="page-heading">{{category.name}}</h1>
+    <h1 class="page-heading category-page-heading">{{category.name}}</h1>
     {{{region name="category_below_header"}}}
 {{/unless}}
-<div class="category_description" >{{{category.description}}}</div>
+<div class="category-description" >{{{category.description}}}</div>
 <div class="page">
+
+    {{#if category.subcategories}}
+    <!--   <aside class="page-sidebar" id="faceted-search-container"> -->
+           {{> components/category/sub-category-grid}}
+      <!-- </aside> -->
+      {{/if}}
     {{#if category.faceted_search_enabled}}
         <aside class="page-sidebar" id="faceted-search-container">
             {{> components/category/sidebar}}
         </aside>
-    {{else if category.subcategories}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
+
     {{else if category.shop_by_price}}
         {{#if theme_settings.shop_by_price_visibility}}
              <aside class="page-sidebar" id="faceted-search-container">
@@ -49,10 +52,10 @@ category:
         {{/if}}
     {{/if}}
 
-    <div class="page-content" id="product-listing-container" style="border: 1px solid green;">
+<div class="page-content" id="product-listing-container" style="border: 1px solid green;">
         {{> components/category/product-listing}}
         {{{region name="category_below_content"}}}
-    </div>
+    </div> 
 </div>
 
 {{/partial}}

@@ -1,0 +1,15 @@
+<div class="subcategory-grid" style="border: 1px solid red;">
+  <!--<ul class="navList "> -->
+  <ul>
+    {{#each category.subcategories}}
+    <li class="subcategory">
+      <a class="navList-action" href="{{url}}" title="{{name}}">
+        <img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1022px-Placeholder_view_vector.svg.png?20220519031949" alt="">
+        <!--<img class="" src="{{image.data}}" alt="" />-->
+        <div><p class="subcategory-title">{{name}}</p></div>
+      </a>
+    </li>
+
+    {{/each}}
+  </ul>
+</div>
