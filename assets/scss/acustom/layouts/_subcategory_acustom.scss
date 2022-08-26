@@ -1,8 +1,8 @@
 .subcategory-grid {
-  // border: 1px solid yellow;
+   border: 1px solid yellow;
   ul {
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 1.4rem;
     grid-template-columns: repeat(1, 1fr);
 
     @include breakpoint("large") {
@@ -16,13 +16,13 @@
   list-style-type: none;
 
   img {
-    //  border: 1px solid green;
+//  border: 1px solid green;
     height: 100px;
   }
   a {
     display: flex;
     //border: 1px solid red;
-
+   
     div {
       // border: 1px solid red;
       display: flex;
@@ -37,6 +37,7 @@
       padding-left: 28px;
     }
   }
+  a:visited { outline: none; }
 }
 
 .subcategory-content-container {

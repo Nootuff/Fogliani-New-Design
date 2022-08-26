@@ -120,6 +120,14 @@
                 </span>
             </p>
         {{/and}} -->
+   
+        {{#if stock_level "!=" null}}
+        {{#if stock_level "==" "0"}}
+        <p class="stock-lvl-note">Esaurito </p>
+        {{else}}
+        <p class="stock-lvl-note">Disponibile </p>
+        {{/if}}
+        {{/if}}
         <h3 class="card-title">
             <a aria-label="{{> components/products/product-info}}"
                href="{{url}}"

@@ -35,10 +35,9 @@ category:
 <div class="page">
 
     {{#if category.subcategories}}
-    <!--   <aside class="page-sidebar" id="faceted-search-container"> -->
            {{> components/category/sub-category-grid}}
-      <!-- </aside> -->
       {{/if}}
+      
     {{#if category.faceted_search_enabled}}
         <aside class="page-sidebar" id="faceted-search-container">
             {{> components/category/sidebar}}
@@ -51,12 +50,23 @@ category:
             </aside>
         {{/if}}
     {{/if}}
+    {{#unless category.subcategories}}
+    <aside class="page-sidebar" id="faceted-search-container">
+        {{> components/category/sidebar}}
+    </aside>
 
-<div class="page-content" id="product-listing-container" style="border: 1px solid green;">
+    
+ <div class="page-content" id="product-listing-container" style="border: 1px solid pink;">
         {{> components/category/product-listing}}
         {{{region name="category_below_content"}}}
     </div> 
+    {{/unless}}
+
+    {{#if category.subcategories}}
+    {{> components/common/promos}}
+    {{/if}}
 </div>
 
 {{/partial}}
+
 {{> layout/base}}

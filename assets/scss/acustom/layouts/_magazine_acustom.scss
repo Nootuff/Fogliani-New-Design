@@ -19,7 +19,10 @@
     text-align: center;
     background-color: $Primary-Light;
     height: 400px;
-  
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 
     button{
       background-color: $TECH-100;
