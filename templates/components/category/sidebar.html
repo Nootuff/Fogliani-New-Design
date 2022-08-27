@@ -1,4 +1,4 @@
-<nav>
+<nav class="plp-sidebar">
    <!-- {{#if category.subcategories}}
         <div class="sidebarBlock">
             <h2 class="sidebarBlock-heading">{{category.name}}</h2>
@@ -11,8 +11,12 @@
             </ul>
         </div>
     {{/if}} -->
+    <!--This is the sidebar-->
     {{> components/faceted-search/index category}}
+<div class="sidebar-filter">
 
+
+</div>
     {{#if category.faceted_search_enabled}}
         {{> components/faceted-search/index category}}
     {{else}}
