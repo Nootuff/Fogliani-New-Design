@@ -1,6 +1,5 @@
 .promos-container {
   //border: 1px solid blue;
- 
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(1, 1fr);
@@ -14,33 +13,66 @@
 }
 
 .promo-card {
-//  border: 1px solid red;
-background-color: $TECH-40;
-  img {
-    border: 1px solid green;
-    max-width: 632px;
-    max-height: 372px;
-    @include breakpoint("large") {
-//max-width: 632px;
-    }
+  //  border: 1px solid red;
+  background-color: $TECH-40;
+}
+
+.promo-img {
+  // border: 1px solid green;
+  width: 100%;
+  //max-width: 632px;  Don't delete these
+  //max-height: 372px;
+  @include breakpoint("large") {
+    //max-width: 632px;
   }
+}
+
+.promo-info {
+  //  border: 1px solid blue;
+  padding: 15px 32px 32px;
+  background-color: $TECH-40;
+  h2 {
+    // border: 1px solid orange;
+    margin: 0;
+  }
+  p {
+    // border: 1px solid red;
+    margin: 20px 0;
+  }
+  button {
+    padding: 12px 16px;
+    border-radius: 6px;
+    color: white;
+    background-color: $TECH-100;
+    margin: 0;
+  }
+}
+
+.subcategory-promos-container {
+  margin-top: 20px;
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.subcategory-promos-column {
+  height: 372px;
+  width: 100%;
   .promo-info {
-   // border: 1px solid blue;
-    padding: 15px 32px 32px;
-    h2{
-       // border: 1px solid orange;
-        margin: 0;
-    }
-    p{
-       // border: 1px solid red; 
-        margin: 20px 0;
-    }
-    button {
-      padding: 12px 16px;
-      border-radius: 6px;
-      color: white;
-      background-color: $TECH-100;
-      margin: 0;
-    }
+    //border: 1px solid red;
+
+    padding: 50px 0 0;
+  }
+  .promo-img{
+   //border: 1px solid red;
+    height: 372px;
+  }
+
+  @include breakpoint("large") {
+    //max-width: 632px;
+    float: left;
+    width: 50%;
   }
 }

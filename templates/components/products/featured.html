@@ -6,12 +6,3 @@
         </li>
     {{/each}}
 </ul> 
-<div class="featured-product-carousel" >
-        
-    {{#if settings.data_tag_enabled}}
-    {{> components/products/carousel products=products list="Featured Products"}}
-{{else}}
-    {{> components/products/carousel products=products}}
-{{/if}}
-
-</div>

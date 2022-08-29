@@ -56,14 +56,14 @@ category:
     </aside>
 
     
- <div class="page-content" id="product-listing-container" style="border: 1px solid pink;">
+ <div class="page-content" id="product-listing-container">
         {{> components/category/product-listing}}
         {{{region name="category_below_content"}}}
     </div> 
     {{/unless}}
 
     {{#if category.subcategories}}
-    {{> components/common/promos}}
+    {{> components/common/category-page-promos}}
     {{/if}}
 </div>
 
