@@ -62,7 +62,7 @@
   //display: none;
   height: 0;  
   overflow: hidden;     
-  transition: height 1s;
+  transition: height 0.5s;
 
   text-align: left;
   a {
@@ -171,9 +171,10 @@
 }
 
 .footer-show {
-  //border: 1px solid blue;
-  //display: block;
-  height: 180px;
+ 
+ 
+ height: 180px;
+ //height: fit-content;
 }
 
 .red {

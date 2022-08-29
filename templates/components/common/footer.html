@@ -30,9 +30,9 @@
         <h3 class="footer-info-heading">
           <span class="footer-heading-large"><!--{{lang 'footer.navigate'}}-->{{settings.store_name}}</span>
           <span class="footer-heading-small">{{settings.store_name}}
-            <span class="footer-collapse" onClick="footerDropdown(this)" >+</span></span>
+            <span class="footer-collapse" onClick="footerDropdown(this); toggleOne();" >+</span></span>
         </h3>
-        <ul class="footer-info-list">
+        <ul class="footer-info-list footer-col-one">
           {{#each pages}}
           <li>
             <a href="{{url}}">{{name}}</a>
@@ -50,9 +50,9 @@
         <h3 class="footer-info-heading">
           <span class="footer-heading-large">{{lang 'footer.categories'}}</span>
           <span class="footer-heading-small">{{lang 'footer.categories'}}
-            <span class="footer-collapse" onClick="footerDropdown(this)">+</span></span>
+            <span class="footer-collapse" onClick="footerDropdown(this); toggleTwo();">+</span></span>
         </h3>
-        <ul class="footer-info-list">
+        <ul class="footer-info-list footer-col-two">
           {{#each categories}}
           <li>
             <a href="{{url}}">{{name}}</a>
@@ -77,12 +77,12 @@
         <h3 class="footer-info-heading">
           <span class="footer-heading-large"> Informazioni legali<!--{{lang 'footer.brands'}}--></span>
           <span class="footer-heading-small">Informazioni legali<!--{{lang 'footer.brands'}}-->
-            <span class="footer-collapse" onClick="footerDropdown(this)">+</span></span>
+            <span class="footer-collapse" onClick="footerDropdown(this); toggleThree();">+</span></span>
          </h3>
 
 
-
-        <ul class="footer-info-list">
+ 
+        <ul class="footer-info-list footer-col-three">
           {{#each shop_by_brand}}
           <li>
             <a href="{{url}}">{{name}}</a>
@@ -101,10 +101,10 @@
         <h3 class="footer-info-heading">
          <span class="footer-heading-large"> {{lang 'footer.info'}}</span>
          <span class="footer-heading-small">{{lang 'footer.info'}} 
-         <span class="footer-collapse" onClick="footerDropdown(this)">+</span></span>
+         <span class="footer-collapse" onClick="footerDropdown(this); toggleFour();">+</span></span>
         </h3>
        
-        <div class="footer-info-list">
+        <div class="footer-info-list footer-col-four">
           <address>{{nl2br settings.address}}</address>
           {{#if settings.phone_number}}
           <address>
@@ -182,7 +182,7 @@
 
 <script>
 
-var footerCollapse = document.getElementsByClassName('footer-collapse');
+//var footerCollapse = document.getElementsByClassName('footer-collapse');
 
 /*
 for (var i = 0; i < footerCollapse.length; i++) {
@@ -190,19 +190,15 @@ for (var i = 0; i < footerCollapse.length; i++) {
 }
 */
 
-function footerDropdown(a) {
- 
- console.log( a )
-
+function footerDropdown(a){
+ console.log( a.innerHTML )
 a.classList.toggle("red");
 //a.parentNode.classList.toggle("underline-red");
-
- if (a.innerHTML === "+") {
-  a.innerHTML = "-";
+ if (a.textContent === "+") {
+  a.textContent = "-";
 } else {
-  a.innerHTML = "+";
+  a.textContent = "+";
 }
-
   //a.parentNode.getElementsByClassName('footer-info-list')[0].classList.toggle("footer-show");
 
 /* const footerCol = document.getElementsByClassName("footer-collapse-3");
@@ -226,27 +222,34 @@ if (footerButtonThree[0].innerHTML === "+") {
 */
 }
 
-/*
-  function showThree() {
-  
-    const footerThree = document.getElementsByClassName("footer-collapse-3");
-    const footerButtonThree =
+  function toggleOne(){
+    const footerOne = document.querySelector(".footer-col-one");
+    footerOne.classList.toggle("footer-show");
+    /*const footerButtonThree =
       document.getElementsByClassName("collapse-button-3");
     const headingThree = document.getElementsByClassName(
       "footer-info-heading-3"
     );
-
     footerThree[0].classList.toggle("footer-show");
     footerButtonThree[0].classList.toggle("red");
     headingThree[0].classList.toggle("red");
     headingThree[0].classList.toggle("underline-red");
-   
-
-    if (footerButtonThree[0].innerHTML === "+") {
-      footerButtonThree[0].innerHTML = "-";
-    } else {
-      footerButtonThree[0].innerHTML = "+";
-    }
+   */
   }
-  */
+
+  function toggleTwo(){
+    const footerTwo = document.querySelector(".footer-col-two");
+    footerTwo.classList.toggle("footer-show");
+  }
+
+  function toggleThree(){
+    const footerThree = document.querySelector(".footer-col-three");
+    footerThree.classList.toggle("footer-show");
+  }
+
+  function toggleFour(){
+    const footerFour = document.querySelector(".footer-col-four");
+    footerFour.classList.toggle("footer-show");
+  }
+
 </script>
