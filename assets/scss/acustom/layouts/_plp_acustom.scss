@@ -10,68 +10,67 @@
   margin: auto;
 }
 
-.actionBar{
-// border: 1px solid red;
- display: flex;
- .display-details{
-  //border: 1px solid blue;
+.actionBar {
+  // border: 1px solid red;
   display: flex;
-  font-weight: bold;
-  font-size: 16px;
+  .display-details {
+    //border: 1px solid blue;
+    display: flex;
+    font-weight: bold;
+    font-size: 16px;
 
-  .display-selector{
-    margin-left: 20px;
-    padding: 3px 7px;
-    background-color: $TECH-40;
-    height: fit-content;
-    svg{
-    //  border: 1px solid green;
+    .display-selector {
+      margin-left: 20px;
+      padding: 8px 10px 4px 10px;
+      background-color: $TECH-40;
+      height: fit-content;
+      .display-selector-icon {
+        cursor: pointer;
+        
+      }
+    
+      .display-selector-list {
+        margin-right: 11px;
+      }
     }
   }
- }
 }
 
-
-
 .actionBar-section {
- // border: 1px solid blue;
+  // border: 1px solid blue;
   margin-left: auto;
   order: 2;
   .form-field {
     border-radius: 0;
-   
   }
 }
 
 .actionBar-section {
- // border: 1px solid yellow;
+  // border: 1px solid yellow;
   float: right;
 }
 
 .plp-grid {
- // border: 1px solid green;
+  // border: 1px solid green;
 }
 
 .page-sidebar + .page-content {
   .productGrid {
-      .product { // 1
-          @include breakpoint("small") {
-              width: grid-calc(3, $total-columns);
-          }
+    .product {
+      // 1
+      @include breakpoint("small") {
+        width: grid-calc(3, $total-columns);
       }
+    }
   }
 }
-
-
 
 /*Sidebar Styles*/
 
 .page-sidebar {
- // border: 1px solid pink;
+  // border: 1px solid pink;
   padding: 0;
 }
 
-.sidebar-filter{
-
-
+.sidebar-filter {
 }
